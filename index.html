@@ -1,68 +1,131 @@
 <html lang="pt-BR">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Contador de dias - Com a ajuda desta ferramenta você pode calcular quantos dias existem entre duas datas">
+
   <meta name="keywords" content="contador de dias, contar dias, quantos dias faltam, contagem de dias entre datas, contar dias, contagem dias, quantos dias, contagem regressiva">
+
   <title>Contador de dias</title>
+
   <!-- Add Bootstrap CSS -->
+
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
+
     body {
+
       background-color: #f8f9fa;
+
     }
+
+
 
     .container {
+
       margin-top: 50px;
+
     }
+
+
 
     .result {
+
       font-size: 24px;
+
       font-weight: bold;
+
       margin-top: 20px;
+
     }
+
   </style>
+
 </head>
 
+
+
 <body>
+
   <div class="container">
+
     <h1 class="text-center mb-4">Contador de dias</h1>
 
-    <div class="form-group">
-      <label for="startDate">Data de início:</label>
-      <input type="date" class="form-control" id="startDate" required>
-    </div>
+
 
     <div class="form-group">
-      <label for="endDate">Data final:</label>
-      <input type="date" class="form-control" id="endDate" required>
+
+      <label for="startDate">Data de início:</label>
+
+      <input type="date" class="form-control" id="startDate" required>
+
     </div>
+
+
+
+    <div class="form-group">
+
+      <label for="endDate">Data final:</label>
+
+      <input type="date" class="form-control" id="endDate" required>
+
+    </div>
+
+
 
     <button class="btn btn-primary" onclick="calculateDays()">Calcular</button>
 
+
+
     <div class="result" id="result"></div>
+
   </div>
 
+
+
   <!-- Add Bootstrap JS and Popper.js -->
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
+
+
   <script>
+
     function calculateDays() {
+
       var startDate = new Date(document.getElementById("startDate").value);
+
       var endDate = new Date(document.getElementById("endDate").value);
 
+
+
       // Calculate the difference in milliseconds
+
       var difference = endDate - startDate;
 
+
+
       // Convert milliseconds to days
+
       var days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
+
+
       // Display the result
+
       document.getElementById("result").innerHTML = "Resultado: " + days + " days.";
+
     }
+
   </script>
 </body>
-
 </html>
